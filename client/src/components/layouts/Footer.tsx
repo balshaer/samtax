@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { footerLinks } from "@/data/FooterLinks";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Map, { Marker } from "react-map-gl";
+// import Map, { Marker } from "react-map-gl";
 
 const Logo = () => (
   <Link to="/">
@@ -39,8 +38,8 @@ const FooterLinkSection = ({
             {link.name}
             {link.isLive && (
               <span className="relative ml-2 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--headline)] opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--headline)]"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-100 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
               </span>
             )}
           </a>
@@ -51,22 +50,23 @@ const FooterLinkSection = ({
 );
 
 const MapComponent = () => {
-  const [viewState, setViewState] = React.useState({
-    longitude: -75.1652,
-    latitude: 39.9526,
-    zoom: 12,
-  });
+  // const [viewState, setViewState] = React.useState({
+  //   longitude: -75.1652,
+  //   latitude: 39.9526,
+  //   zoom: 12,
+  // });
 
   return (
-    <Map
-      {...viewState}
-      onMove={(evt) => setViewState(evt.viewState)}
-      style={{ width: "100%", height: "100%" }}
-      mapStyle="mapbox://styles/mapbox/streets-v11"
-      mapboxAccessToken="pk.eyJ1IjoiZXhhbXBsZXVzZXIiLCJhIjoiY2t6YWV4YW1wbGV0b2tlbiJ9.dGhpc2lzYW5leGFtcGxldG9rZW4"
-    >
-      <Marker longitude={-75.1652} latitude={39.9526} color="red" />
-    </Map>
+    <div className="flex h-[100%] w-full items-center justify-center border-2">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153168!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d8b6e6f0b1b!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1601138221085!5m2!1sen!2sau"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        style={{ border: 0 }}
+        aria-hidden="false"
+      ></iframe>
+    </div>
   );
 };
 
@@ -78,7 +78,7 @@ export default function Footer() {
           <Card className="border-none bg-transparent lg:order-last">
             <CardHeader>
               <CardTitle className="text-primary-foreground">
-                Our Location
+                {/* Our Location */}
               </CardTitle>
             </CardHeader>
             <CardContent className="h-64 lg:h-96">
