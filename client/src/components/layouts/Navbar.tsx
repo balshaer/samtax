@@ -1,35 +1,60 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
-import { Button } from "../ui/button";
-import { Calendar, Menu, X } from "lucide-react";
-import Logo from "../ui/Logo";
-import { NavigationMenuDemo } from "./NavigationMenuDemo";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import Logo from "@/components/ui/Logo";
+import { NavigationMenuDemo } from "./NavigationMenuDemo";
+
+interface Language {
+  code: string;
+  name: string;
+  flag: string;
+}
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState<Language>({
+    code: "en",
+    name: "English",
+    flag: "🇬🇧",
+  });
 
-  function MobileNavItem({
-    href,
-    onClick,
-    children,
-  }: {
-    href: string;
+  const languages: Language[] = [
+    { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "ar", name: "العربية", flag: "🇸🇦" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+  ];
+
+  const MobileNavItem: React.FC<{
+    to: string;
     onClick: () => void;
     children: React.ReactNode;
-  }) {
+  }> = ({ to, onClick, children }) => {
     return (
       <motion.li whileTap={{ scale: 0.95 }} className="block py-2">
-        <a
-          href={href}
+        <Link
+          to={to}
           onClick={onClick}
           className="block px-4 py-2 text-[var(--paragraph)] transition-colors duration-200 hover:text-[var(--headline)]"
         >
           {children}
-        </a>
+        </Link>
       </motion.li>
     );
-  }
+  };
+
+  const changeLanguage = (lang: Language) => {
+    setSelectedLang(lang);
+    // Here you would typically update your i18n configuration
+    console.log(`Language changed to: ${lang.name}`);
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white bg-opacity-70 shadow-sm backdrop-blur-md">
@@ -41,28 +66,43 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <Link
-          to={"#"}
-          className="backdrop-blur-2 hoverd flex cursor-pointer items-center justify-center gap-1 rounded-full border-2 bg-[#0000000f] px-4 py-2 text-sm font-bold hover:border-[#0000006c] max-md:hidden"
-        >
-          <span>Book a bar</span>
-          <span>
-            <Calendar className="h-4 w-4" />
-          </span>
-        </Link>
+        <div className="flex items-center space-x-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button className="backdrop-blur-2 flex cursor-pointer items-center justify-center gap-1 rounded-full border-2 bg-[#0000000f] px-4 py-2 text-sm font-bold text-[var(--headline)] hover:border-[#0000006c] max-md:hidden">
+                <span>
+                  {selectedLang.flag} {selectedLang.name}
+                </span>
+                <ChevronDown className="h-4 w-4 opacity-50" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-[140px]">
+              {languages.map((lang) => (
+                <DropdownMenuItem
+                  key={lang.code}
+                  onClick={() => changeLanguage(lang)}
+                  className="cursor-pointer"
+                >
+                  <span className="mr-2">{lang.flag}</span>
+                  {lang.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-        <div className="md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </Button>
+          </div>
         </div>
       </div>
       {isMenuOpen && (
@@ -73,20 +113,16 @@ export default function Navbar() {
           className="bg-white shadow-md md:hidden"
         >
           <ul className="py-4">
-            <MobileNavItem
-              href="#services"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <MobileNavItem to="#services" onClick={() => setIsMenuOpen(false)}>
               Our services
             </MobileNavItem>
-            <MobileNavItem href="#about" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavItem to="#about" onClick={() => setIsMenuOpen(false)}>
               About
             </MobileNavItem>
-            <MobileNavItem href="#contact" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact us
             </MobileNavItem>
-
-            <MobileNavItem href="#contact" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
               Book a bar
             </MobileNavItem>
           </ul>

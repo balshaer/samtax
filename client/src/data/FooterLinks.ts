@@ -1,22 +1,24 @@
 export const footerLinks = {
   services: [
-    { name: "Tax Preparation", href: "#" },
-    { name: "Bookkeeping", href: "#" },
-    { name: "Company Setup", href: "#" },
-    { name: "Translation Services", href: "#" },
+    { href: "#", name: "Tax E-Filing Services" },
+    { href: "#", name: "Bookkeeping" },
+    { href: "#", name: "Translation Services" },
+    { href: "#", name: "Immigration Services" },
+    { href: "#", name: "Notary Services" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Services", href: "#" },
+    { href: "#", name: "About" },
+    { href: "#", name: "Meet the Team" },
+    { href: "#", name: "Contact Us" },
   ],
   helpfulLinks: [
-    { name: "Contact", href: "#" },
-    { name: "FAQs", href: "#" },
-    { name: "Book a bar", href: "#", isLive: true },
+    { href: "#", name: "FAQs" },
+    { href: "#", name: "Resources" },
+    { href: "#", name: "Blog" },
   ],
   legal: [
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Cookies", href: "#" },
+    { href: "#", name: "Terms & Conditions" },
+    { href: "#", name: "Privacy Policy" },
+    { href: "#", name: "Cookie Policy" },
   ],
 };

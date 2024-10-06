@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 // import { useToast } from "@/components/hooks/use-toast"
 
 export default function Contact() {
@@ -29,13 +30,11 @@ export default function Contact() {
     setErr(false);
   };
 
+  const { t } = useTranslation();
   return (
     <section id="contact" className="section mx-auto max-w-3xl text-center">
-      <h3 className="section-title pb-0">Get in Touch</h3>
-      <p className="description pb-6">
-        Ready to elevate your financial strategy or need expert translation?
-        Let's connect!
-      </p>
+      <h3 className="section-title pb-0">{t("contact.title")}</h3>
+      <p className="description pb-6">{t("contact.subtitle")}</p>
 
       <form onSubmit={handleSubmit} className="space-y-2 bg-transparent">
         <div>
@@ -46,7 +45,7 @@ export default function Contact() {
             id="name"
             name="name"
             type="text"
-            placeholder="Your Name Or Your Company Name"
+            placeholder={t("contact.nameInput")}
             value={name}
             className={err && !name ? "border-red-500" : ""}
             onChange={(e) => setName(e.target.value)}
@@ -61,7 +60,7 @@ export default function Contact() {
             id="email"
             name="email"
             type="email"
-            placeholder="email@example.com"
+            placeholder={t("contact.emailInput")}
             value={email}
             className={err && !email ? "border-red-500" : ""}
             onChange={(e) => setEmail(e.target.value)}
@@ -75,14 +74,14 @@ export default function Contact() {
           <Textarea
             id="message"
             name="message"
-            placeholder="Your Message"
+            placeholder={t("contact.messageInput")}
             value={message}
             className={err && !message ? "border-red-500" : "h-36"}
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
 
-        <Button type="submit">Send Message</Button>
+        <Button type="submit">{t("contact.send")}</Button>
       </form>
     </section>
   );

@@ -1,28 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="section">
-      <div className="section-title">About me</div>
-
-      <div className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet earum
-        porro iusto excepturi consectetur quam qui molestias quasi iure
-        laboriosam quod accusamus explicabo blanditiis incidunt, illum nostrum
-        reprehenderit atque soluta.
-      </div>
-
-      <div className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet earum
-        porro iusto excepturi consectetur quam qui molestias quasi iure
-        laboriosam quod accusamus explicabo blanditiis incidunt, illum nostrum
-        reprehenderit atque soluta.
-      </div>
-
-      <div className="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet earum
-        porro iusto excepturi consectetur quam qui molestias quasi iure
-        laboriosam quod accusamus explicabo blanditiis incidunt, illum nostrum
-        reprehenderit atque soluta.
-      </div>
+      <div className="section-title">{t("about.title")}</div>
+      <div className="description">{t("about.description1")}</div>
+      <div className="description">{t("about.description2")}</div>
     </section>
   );
 }

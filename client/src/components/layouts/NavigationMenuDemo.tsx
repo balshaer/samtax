@@ -9,17 +9,22 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import React from "react";
-import { NavigationMenuData } from "@/data/NavigationData";
+import { useTranslation } from "react-i18next";
+import { servicesData } from "@/data/ServicesData";
 
 export function NavigationMenuDemo() {
+  const { t } = useTranslation();
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger>
+            {t("services.menuTitle")}
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {NavigationMenuData.map((component) => (
+              {servicesData.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -34,7 +39,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <a href="#about">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              About
+              {t("navbar.about")}
             </NavigationMenuLink>
           </a>
         </NavigationMenuItem>
@@ -42,7 +47,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <a href="#contact">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
+              {t("navbar.contact")}
             </NavigationMenuLink>
           </a>
         </NavigationMenuItem>
@@ -55,6 +60,8 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
+  const { t } = useTranslation();
+
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -66,13 +73,16 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="text-sm font-medium leading-none">
+            {title ? t(title) : ""}
+          </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
+            {typeof children === "string" ? t(children) : children}
           </p>
         </a>
       </NavigationMenuLink>
     </li>
   );
 });
+
 ListItem.displayName = "ListItem";

@@ -1,1 +1,72 @@
-{}
+{
+  "navbar": {
+    "contact": "Contact",
+    "about": "À propos"
+  },
+
+  "banner": {
+    "title": "Services financiers et linguistiques professionnels",
+    "description": "Votre partenaire de confiance pour les services fiscaux, de traduction et d'immigration. Nous sommes spécialisés dans la préparation des déclarations fiscales, la tenue de livres et les services de traduction certifiés. Laissez-nous gérer vos besoins financiers et juridiques avec professionnalisme et soin.",
+    "getStarted": "Commencer",
+    "aboutUs": "À propos de nous"
+  },
+
+  "services": {
+    "title": "Services",
+    "menuTitle": "Services",
+    "subtitle": "Nous offrons une variété de services adaptés pour répondre à vos besoins financiers et juridiques",
+
+    "tax_efiling": {
+      "title": "Services de déclaration fiscale électronique",
+      "description": "Simplifiez votre processus de déclaration fiscale avec notre service expert de préparation des déclarations pour les particuliers et les petites entreprises. Que vous ayez besoin d'aide pour les déclarations annuelles ou des situations fiscales plus complexes, nous vous couvrons."
+    },
+    "bookkeeping": {
+      "title": "Tenue de livres",
+      "description": "Nos services de tenue de livres sont conçus pour garder votre petite entreprise organisée. De la gestion des registres financiers au maintien de comptes prêts pour les impôts, nous assurons l'exactitude et la conformité tout au long de l'année."
+    },
+    "translation": {
+      "title": "Services de traduction",
+      "description": "Nous fournissons des services de traduction professionnels en anglais, arabe et français. Que vous ayez besoin de traduction de documents pour un usage officiel ou une communication d'affaires, nous garantissons la précision et la pertinence culturelle."
+    },
+    "immigration": {
+      "title": "Services d'immigration",
+      "description": "Naviguer dans le processus d'immigration peut être accablant. Nous vous assistons avec la documentation, la préparation des formulaires et les services notariaux pour simplifier votre parcours d'immigration."
+    },
+    "notary": {
+      "title": "Services notariaux",
+      "description": "Besoin de notarisation pour des documents juridiques ? Nous offrons des services notariaux certifiés pour authentifier vos documents importants."
+    }
+  },
+
+  "about": {
+    "title": "À propos de moi",
+    "description1": "Mahmoud Samaoui est un préparateur fiscal et traducteur certifié, servant les particuliers et les petites entreprises à Philadelphie. En tant que fier membre de l'Association américaine des traducteurs, Mahmoud offre des services de traduction experts en anglais, arabe et français.",
+    "description2": "Il s'engage à fournir un service personnalisé dans des domaines tels que la préparation fiscale, la tenue de livres et le soutien à l'immigration. Mahmoud s'efforce de simplifier les processus complexes et de fournir des solutions fiables adaptées aux besoins uniques de chaque client."
+  },
+
+  "footer": {
+    "locationTitle": "Notre emplacement",
+    "services": "Services",
+    "company": "Entreprise",
+    "helpfulLinks": "Liens utiles",
+    "address": "1787 S 8th St (Coin de 8th St et Moore St) Philadelphie, PA 19148 USA",
+    "phone": "(267) 304-7121",
+    "email": "msamaoui@outlook.com",
+    "contactMessage": "Pour un soutien fiscal, de traduction et juridique, n'hésitez pas à nous contacter aujourd'hui. Nous sommes là pour vous faciliter le processus !",
+    "legal": {
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité",
+      "cookies": "Politique des cookies"
+    },
+    "copyright": "© {{year}} Mahmoud Samaoui. Tous droits réservés."
+  },
+
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à élever votre stratégie financière ou besoin d'une traduction experte ? Connectons-nous !",
+    "nameInput": "votre nom",
+    "emailInput": "email@example.com",
+    "messageInput": "message",
+    "send": "Envoyer"
+  }
+}

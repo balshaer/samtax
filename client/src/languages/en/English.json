@@ -1,1 +1,69 @@
-{}
+{
+  "navbar": {
+    "contact": "Contact",
+    "about": "About"
+  },
+
+  "banner": {
+    "title": "Professional Financial & Language Services",
+    "description": "Your Trusted Partner for Tax, Translation, and Immigration Services. We specialize in tax preparation, bookkeeping, and certified translation services. Let us handle your financial and legal needs with professionalism and care.",
+    "getStarted": "Get Started",
+    "aboutUs": "About Us"
+  },
+  "services": {
+    "title": "Services",
+    "menuTitle": "Services",
+    "subtitle": "We offer a variety of services tailored to meet your financial and legal needs",
+
+    "tax_efiling": {
+      "title": "Tax E-Filing Services",
+      "description": "Simplify your tax filing process with our expert tax return preparation for individuals and small businesses. Whether you need help with annual filings or more complex tax situations, we've got you covered."
+    },
+    "bookkeeping": {
+      "title": "Bookkeeping",
+      "description": "Our bookkeeping services are designed to keep your small business organized. From managing financial records to maintaining tax-ready accounts, we ensure accuracy and compliance throughout the year."
+    },
+    "translation": {
+      "title": "Translation Services",
+      "description": "We provide professional translation services in English, Arabic, and French. Whether you need document translation for official use or business communication, we guarantee precision and cultural relevance."
+    },
+    "immigration": {
+      "title": "Immigration Services",
+      "description": "Navigating the immigration process can be overwhelming. We assist with documentation, form preparation, and notary services to streamline your immigration journey."
+    },
+    "notary": {
+      "title": "Notary Services",
+      "description": "Need notarization for legal documents? We offer certified notary services to authenticate your important documents."
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description1": "Mahmoud Samaoui is a certified tax preparer and translator, serving individuals and small businesses in Philadelphia. As a proud member of the American Translators Association, Mahmoud offers expert translation services in English, Arabic, and French.",
+    "description2": "He is committed to providing personalized service in areas such as tax preparation, bookkeeping, and immigration support. Mahmoud strives to simplify complex processes and deliver reliable solutions tailored to each client’s unique needs."
+  },
+
+  "footer": {
+    "locationTitle": "Our Location",
+    "services": "Services",
+    "company": "Company",
+    "helpfulLinks": "Helpful Links",
+    "address": "1787 S 8th St (Corner of 8th St and Moore St) Philadelphia, PA 19148 USA",
+    "phone": "(267) 304-7121",
+    "email": "msamaoui@outlook.com",
+    "contactMessage": "For tax, translation, and legal support, feel free to get in touch today. We're here to make the process easier for you!",
+    "legal": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "copyright": "© {{year}} Mahmoud Samaoui. All rights reserved."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to elevate your financial strategy or need expert translation? Let's connect!",
+    "nameInput": "your name",
+    "emailInput": "email@example.com",
+    "messageInput": "message",
+    "send": "Submit"
+  }
+}

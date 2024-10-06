@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
+import { useTranslation } from "react-i18next";
 
 export default function Banner() {
+  const { t } = useTranslation(); 
   return (
     <section className="m-auto mb-16 max-w-4xl text-center">
       <motion.h2
@@ -10,7 +12,7 @@ export default function Banner() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="section-title s text-4xl"
       >
-        Professional Financial & Language Services
+        {t("banner.title")} 
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
@@ -18,11 +20,8 @@ export default function Banner() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="description pb-6"
       >
-        Samtax is a professional services firm based in Philadelphia, PA,
-        specializing in <span id="mark">tax preparation</span> and{" "}
-        <span id="mark">financial consulting</span> for individuals and
-        businesses. With a team of experienced professionals, Samtax offers
-        personalized solutions to help clients navi
+        {t("banner.description")}{" "}
+
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -34,13 +33,14 @@ export default function Banner() {
           className="h-12 w-1/4 max-md:h-12 max-md:w-full"
           variant={"default"}
         >
-          Get Started
+          {t("banner.getStarted")}{" "}
+ 
         </Button>
         <Button
           className="h-12 w-1/4 max-md:h-12 max-md:w-full"
           variant={"outline"}
         >
-          About us
+          {t("banner.aboutUs")}
         </Button>
       </motion.div>
     </section>
