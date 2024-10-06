@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Logo from "@/components/ui/Logo";
 import { NavigationMenuDemo } from "./NavigationMenuDemo";
+import i18n from "@/i18n";
 
 interface Language {
   code: string;
@@ -23,13 +24,21 @@ export default function Navbar() {
   const [selectedLang, setSelectedLang] = useState<Language>({
     code: "en",
     name: "English",
-    flag: "🇬🇧",
+    flag: "",
   });
 
+  const changeLanguage = (lang: Language) => {
+    i18n.changeLanguage(lang.code);
+    localStorage.setItem("selectedLanguage", lang.code);
+    document.documentElement.lang = lang.code;
+    document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr";
+    setSelectedLang(lang);
+  };
+
   const languages: Language[] = [
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "ar", name: "العربية", flag: "🇸🇦" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "en", name: "English", flag: "" },
+    { code: "ar", name: "العربية", flag: "" },
+    { code: "fr", name: "Français", flag: "" },
   ];
 
   const MobileNavItem: React.FC<{
@@ -50,23 +59,21 @@ export default function Navbar() {
     );
   };
 
-  const changeLanguage = (lang: Language) => {
-    setSelectedLang(lang);
-    // Here you would typically update your i18n configuration
-    console.log(`Language changed to: ${lang.name}`);
-  };
-
   return (
-    <nav className="sticky top-0 z-50 bg-white bg-opacity-70 shadow-sm backdrop-blur-md">
+    <nav
+      dir="ltr"
+      className="sticky top-0 z-50 bg-white bg-opacity-70 shadow-sm backdrop-blur-md"
+    >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Logo />
-        <nav className="hidden md:block">
+        <div className="hidden md:block">
           <ul className="flex space-x-6">
             <NavigationMenuDemo />
           </ul>
-        </nav>
+        </div>
 
         <div className="flex items-center space-x-4">
+          {/* Language Selector for Desktop */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button className="backdrop-blur-2 flex cursor-pointer items-center justify-center gap-1 rounded-full border-2 bg-[#0000000f] px-4 py-2 text-sm font-bold text-[var(--headline)] hover:border-[#0000006c] max-md:hidden">
@@ -90,6 +97,7 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button
               variant="ghost"
@@ -122,9 +130,35 @@ export default function Navbar() {
             <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
               Contact us
             </MobileNavItem>
-            <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
+            <MobileNavItem to="#book" onClick={() => setIsMenuOpen(false)}>
               Book a bar
             </MobileNavItem>
+
+            {/* Language Selector for Mobile */}
+            <li className="block py-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button className="m-auto flex w-[90%] items-center justify-between bg-white px-4 py-2 text-left text-[var(--hedline)]">
+                    <span>
+                      {selectedLang.flag} {selectedLang.name}
+                    </span>
+                    <ChevronDown className="h-4 w-4 opacity-50" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-[140px]">
+                  {languages.map((lang) => (
+                    <DropdownMenuItem
+                      key={lang.code}
+                      onClick={() => changeLanguage(lang)}
+                      className="cursor-pointer"
+                    >
+                      <span className="mr-2">{lang.flag}</span>
+                      {lang.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </li>
           </ul>
         </motion.nav>
       )}

@@ -30,12 +30,11 @@ export const ScrollToTop: React.FC = () => {
     <>
       {isVisible && (
         <Button
-          className="fixed bottom-4 bg-red-600 right-4 z-50 rounded-full p-2 shadow-lg transition-opacity duration-300"
+          className="fixed bottom-4 right-4 z-50 rounded-full bg-[var(--button)] p-2 shadow-lg transition-opacity duration-300"
           onClick={scrollToTop}
           aria-label="Scroll to top"
         >
           <ArrowUp className="h-6 w-6" />
-          <span className="sr-only">Scroll to top</span>
         </Button>
       )}
     </>

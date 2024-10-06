@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 // import { useToast } from "@/components/hooks/use-toast"
 
 export default function Contact() {
@@ -31,8 +32,15 @@ export default function Contact() {
   };
 
   const { t } = useTranslation();
+
+  const direction = i18n.language === "ar" ? "rtl" : "ltr";
+
   return (
-    <section id="contact" className="section mx-auto max-w-3xl text-center">
+    <section
+      dir={direction}
+      id="contact"
+      className="section mx-auto max-w-3xl text-center"
+    >
       <h3 className="section-title pb-0">{t("contact.title")}</h3>
       <p className="description pb-6">{t("contact.subtitle")}</p>
 

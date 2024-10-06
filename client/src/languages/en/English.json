@@ -65,5 +65,29 @@
     "emailInput": "email@example.com",
     "messageInput": "message",
     "send": "Submit"
+  },
+  "footerLinks": {
+    "services": {
+      "taxEFiling": "Tax E-Filing Services",
+      "bookkeeping": "Bookkeeping",
+      "translation": "Translation Services",
+      "immigration": "Immigration Services",
+      "notary": "Notary Services"
+    },
+    "company": {
+      "about": "About",
+      "meetTheTeam": "Meet the Team",
+      "contactUs": "Contact Us"
+    },
+    "helpfulLinks": {
+      "faqs": "FAQs",
+      "resources": "Resources",
+      "blog": "Blog"
+    },
+    "legal": {
+      "termsConditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy"
+    }
   }
 }

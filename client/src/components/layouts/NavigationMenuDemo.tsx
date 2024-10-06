@@ -11,9 +11,11 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { servicesData } from "@/data/ServicesData";
+import i18n from "@/i18n";
 
 export function NavigationMenuDemo() {
   const { t } = useTranslation();
+  const direction = i18n.language === "ar" ? "rtl" : "ltr";
 
   return (
     <NavigationMenu>
@@ -23,12 +25,16 @@ export function NavigationMenuDemo() {
             {t("services.menuTitle")}
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul
+              dir={direction}
+              className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
+            >
               {servicesData.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
+                  className="cursor-text"
                 >
                   {component.description}
                 </ListItem>

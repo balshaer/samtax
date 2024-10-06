@@ -1,24 +1,24 @@
 export const footerLinks = {
   services: [
-    { href: "#", name: "Tax E-Filing Services" },
-    { href: "#", name: "Bookkeeping" },
-    { href: "#", name: "Translation Services" },
-    { href: "#", name: "Immigration Services" },
-    { href: "#", name: "Notary Services" },
+    { href: "#", name: "footerLinks.services.taxEFiling" },
+    { href: "#", name: "footerLinks.services.bookkeeping" },
+    { href: "#", name: "footerLinks.services.translation" },
+    { href: "#", name: "footerLinks.services.immigration" },
+    { href: "#", name: "footerLinks.services.notary" },
   ],
   company: [
-    { href: "#", name: "About" },
-    { href: "#", name: "Meet the Team" },
-    { href: "#", name: "Contact Us" },
+    { href: "#", name: "footerLinks.company.about" },
+    { href: "#", name: "footerLinks.company.meetTheTeam" },
+    { href: "#", name: "footerLinks.company.contactUs" },
   ],
   helpfulLinks: [
-    { href: "#", name: "FAQs" },
-    { href: "#", name: "Resources" },
-    { href: "#", name: "Blog" },
+    { href: "#", name: "footerLinks.helpfulLinks.faqs" },
+    { href: "#", name: "footerLinks.helpfulLinks.resources" },
+    { href: "#", name: "footerLinks.helpfulLinks.blog" },
   ],
   legal: [
-    { href: "#", name: "Terms & Conditions" },
-    { href: "#", name: "Privacy Policy" },
-    { href: "#", name: "Cookie Policy" },
+    { href: "#", name: "footerLinks.legal.termsConditions" },
+    { href: "#", name: "footerLinks.legal.privacyPolicy" },
+    { href: "#", name: "footerLinks.legal.cookiePolicy" },
   ],
 };

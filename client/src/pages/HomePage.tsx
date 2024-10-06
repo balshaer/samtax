@@ -2,9 +2,9 @@ import Navbar from "@/components/layouts/Navbar";
 import Banner from "@/components/layouts/Banner";
 import Services from "@/components/layouts/Services";
 import About from "./About";
-import Contact from "@/components/layouts/Contact";
 import Footer from "@/components/layouts/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import Contact from "@/components/layouts/Contact";
 
 export default function HomePage() {
   return (

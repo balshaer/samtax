@@ -17,7 +17,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div dir="ltr" className="App">
       <Toaster className="hidden max-md:block" position="top-center" />
       <Toaster className="hidden min-[768px]:block" />
 

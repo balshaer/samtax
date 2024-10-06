@@ -8,16 +8,18 @@ import {
 } from "@/components/ui/card";
 import { servicesData } from "@/data/ServicesData";
 import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
 export default function Services() {
   const { t } = useTranslation();
+  const direction = i18n.language === "ar" ? "rtl" : "ltr";
 
   return (
-    <section id="services" className="section">
-      <h2 className="section-title text-center text-3xl font-bold">
+    <section dir={direction} id="services" className="section">
+      <h2 className="section-title pb-3 text-center text-3xl font-bold">
         {t("services.title")}
       </h2>
-      <p className="section-subtitle pb-14 text-center max-md:pb-4">
+      <p className="section-subtitle pb-12 text-center max-md:pb-10">
         {t("services.subtitle")}
       </p>
       <div className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-3">

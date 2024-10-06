@@ -68,5 +68,29 @@
     "emailInput": "email@example.com",
     "messageInput": "message",
     "send": "Envoyer"
+  },
+  "footerLinks": {
+    "services": {
+      "taxEFiling": "Services de déclaration fiscale en ligne",
+      "bookkeeping": "Comptabilité",
+      "translation": "Services de traduction",
+      "immigration": "Services d'immigration",
+      "notary": "Services de notaire"
+    },
+    "company": {
+      "about": "À propos",
+      "meetTheTeam": "Rencontrez l'équipe",
+      "contactUs": "Contactez-nous"
+    },
+    "helpfulLinks": {
+      "faqs": "FAQ",
+      "resources": "Ressources",
+      "blog": "Blog"
+    },
+    "legal": {
+      "termsConditions": "Conditions générales",
+      "privacyPolicy": "Politique de confidentialité",
+      "cookiePolicy": "Politique en matière de cookies"
+    }
   }
 }

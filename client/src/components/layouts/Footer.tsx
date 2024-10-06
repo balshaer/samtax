@@ -14,7 +14,7 @@ const Logo = () => (
         transition={{ duration: 0.5 }}
         className="text-2xl font-bold text-primary-foreground"
       >
-        Mahmoud Samaoui
+        Mahmoud.S
       </motion.h1>
     </div>
   </Link>
@@ -26,29 +26,33 @@ const FooterLinkSection = ({
 }: {
   title: string;
   links: Array<{ href: string; name: string; isLive?: boolean }>;
-}) => (
-  <div>
-    <p className="font-medium text-primary-foreground">{title}</p>
-    <ul className="mt-6 space-y-4 text-sm">
-      {links.map((link, index) => (
-        <li key={index}>
-          <a
-            href={link.href}
-            className="flex items-center text-primary-foreground/65 transition hover:text-primary-foreground/75"
-          >
-            {link.name}
-            {link.isLive && (
-              <span className="relative ml-2 flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-100 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
-              </span>
-            )}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <p className="font-medium text-primary-foreground">{t(title)}</p>
+      <ul className="mt-6 space-y-4 text-sm">
+        {links.map((link, index) => (
+          <li key={index}>
+            <a
+              href={link.href}
+              className="flex items-center text-primary-foreground/65 transition hover:text-primary-foreground/75"
+            >
+              {t(link.name)}
+              {link.isLive && (
+                <span className="relative ml-2 flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-100 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
+                </span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const MapComponent = () => {
   return (
@@ -69,6 +73,7 @@ const MapComponent = () => {
 
 export default function Footer() {
   const { t } = useTranslation();
+
   return (
     <footer className="bg-primary">
       <div className="container">
@@ -84,7 +89,7 @@ export default function Footer() {
             </CardContent>
           </Card>
 
-          <div className="w-full py-16 pe-16 max-md:p-0">
+          <div className="w-full py-16 pe-16 max-md:p-8">
             <div className="hidden text-primary-foreground lg:block">
               <Logo />
             </div>
@@ -123,9 +128,9 @@ export default function Footer() {
               </Link>
             </div>
 
-            <p className="mt-4 text-sm text-primary-foreground/80">
+            {/* <p className="mt-4 text-sm text-primary-foreground/80">
               {t("footer.contactMessage")}
-            </p>
+            </p> */}
 
             <div className="mt-8 border-t border-primary-foreground/10 pt-8">
               <ul className="flex flex-wrap gap-4 text-xs">
@@ -135,7 +140,7 @@ export default function Footer() {
                       href={link.href}
                       className="text-primary-foreground/60 transition hover:text-primary-foreground/75"
                     >
-                      {link.name}
+                      {t(link.name)}
                     </a>
                   </li>
                 ))}

@@ -68,5 +68,29 @@
     "emailInput": "email@example.com",
     "messageInput": "الرسالة",
     "send": "إرسال"
+  },
+  "footerLinks": {
+    "services": {
+      "taxEFiling": "خدمات تقديم الإقرارات الضريبية إلكترونيًا",
+      "bookkeeping": "مسك الدفاتر",
+      "translation": "خدمات الترجمة",
+      "immigration": "خدمات الهجرة",
+      "notary": "خدمات كاتب العدل"
+    },
+    "company": {
+      "about": "حول",
+      "meetTheTeam": "قابل الفريق",
+      "contactUs": "اتصل بنا"
+    },
+    "helpfulLinks": {
+      "faqs": "الأسئلة الشائعة",
+      "resources": "الموارد",
+      "blog": "المدونة"
+    },
+    "legal": {
+      "termsConditions": "الشروط والأحكام",
+      "privacyPolicy": "سياسة الخصوصية",
+      "cookiePolicy": "سياسة ملفات تعريف الارتباط"
+    }
   }
 }
