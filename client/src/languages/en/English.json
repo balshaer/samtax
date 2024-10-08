@@ -1,4 +1,8 @@
 {
+  "app": {
+    "loading": "Loading ..."
+  },
+
   "navbar": {
     "services": "Our Services",
     "contact": "Contact Us",
@@ -76,7 +80,10 @@
     "nameInput": "Your name or company name",
     "emailInput": "email@example.com",
     "messageInput": "Your message",
-    "send": "Submit Inquiry"
+    "send": "Submit Inquiry",
+    "errorMessage": "Please fill in all fields",
+    "successfulMessage": "Message sent successfully",
+    "failedMessage": "Failed to send message. Please try again."
   },
 
   "footerLinks": {

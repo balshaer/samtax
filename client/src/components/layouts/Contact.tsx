@@ -2,33 +2,83 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import i18n from "@/i18n";
-// import { useToast } from "@/components/hooks/use-toast"
+import emailjs from "emailjs-com";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [err, setErr] = useState(false);
-  // const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (name === "" || email === "" || message === "") {
       setErr(true);
-      toast.error("Please fill in all fields");
+      toast({
+        title: t("contact.errorMessage"),
+        description: "",
+      });
       return;
     }
 
-    toast.success("Message sent successfully");
+    setLoading(true);
 
-    setName("");
-    setEmail("");
-    setMessage("");
-    setErr(false);
+    const form = document.createElement("form");
+    form.setAttribute("action", "");
+    form.setAttribute("method", "post");
+
+    const nameInput = document.createElement("input");
+    nameInput.setAttribute("type", "hidden");
+    nameInput.setAttribute("name", "name");
+    nameInput.setAttribute("value", name);
+    form.appendChild(nameInput);
+
+    const emailInput = document.createElement("input");
+    emailInput.setAttribute("type", "hidden");
+    emailInput.setAttribute("name", "email");
+    emailInput.setAttribute("value", email);
+    form.appendChild(emailInput);
+
+    const messageInput = document.createElement("input");
+    messageInput.setAttribute("type", "hidden");
+    messageInput.setAttribute("name", "message");
+    messageInput.setAttribute("value", message);
+    form.appendChild(messageInput);
+
+    document.body.appendChild(form);
+
+    try {
+      await emailjs.sendForm(
+        "service_vr92r5g",
+        "template_dvr1x78",
+        form,
+        "5J3vip7CH5ZH9OLZv",
+      );
+
+      toast({
+        title: t("contact.successfulMessage"),
+        description: "",
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+      setErr(false);
+    } catch (error) {
+      toast({
+        title: t("contact.failedMessage"),
+        description: "",
+      });
+    } finally {
+      document.body.removeChild(form);
+      setLoading(false);
+    }
   };
 
   const { t } = useTranslation();
@@ -89,7 +139,9 @@ export default function Contact() {
           />
         </div>
 
-        <Button type="submit">{t("contact.send")}</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? "Sending..." : t("contact.send")}
+        </Button>
       </form>
     </section>
   );

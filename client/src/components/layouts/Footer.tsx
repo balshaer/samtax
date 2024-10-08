@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { footerLinks } from "@/data/FooterLinks";
 import { useTranslation } from "react-i18next";
 import { iFrameLink } from "@/data/Links";
+import { Skeleton } from "../ui/skeleton";
+import { useState } from "react";
+import i18n from "@/i18n";
 
 const Logo = () => (
   <Link to="/">
@@ -56,22 +59,40 @@ const FooterLinkSection = ({
 };
 
 const MapComponent = () => {
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(true);
+
+  const handleMapLoad = () => {
+    setLoading(false);
+  };
+
+  const direction = i18n.language === "ar" ? "rtl" : "ltr";
+
   return (
-    <div className="flex h-[100%] w-full items-center justify-center border-2 border-[var(--horder-color)]">
+    <div
+      dir={direction}
+      className="flex h-full w-full items-center justify-center border-2 border-[var(--horder-color)]"
+    >
       <iframe
         src={iFrameLink}
         width="100%"
         height="100%"
-        style={{ border: 0 }}
+        style={{ border: 0, display: loading ? "none" : "block" }}
         allowFullScreen={false}
         loading="lazy"
         className="m-0 p-0"
         referrerPolicy="no-referrer-when-downgrade"
+        onLoad={handleMapLoad}
       ></iframe>
+
+      {loading && (
+        <Skeleton className="flex h-full w-full items-center justify-center">
+          <p className="text-sm">{t("app.loading")}</p>
+        </Skeleton>
+      )}
     </div>
   );
 };
-
 export default function Footer() {
   const { t } = useTranslation();
 

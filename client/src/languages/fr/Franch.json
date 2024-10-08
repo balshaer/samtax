@@ -1,4 +1,7 @@
 {
+  "app": {
+    "loading": "Chargement ..."
+  },
   "navbar": {
     "services": "Nos Services",
     "contact": "Contactez-nous",
@@ -76,7 +79,10 @@
     "nameInput": "Votre nom ou le nom de votre entreprise",
     "emailInput": "email@exemple.com",
     "messageInput": "Votre message",
-    "send": "Envoyer la Demande"
+    "send": "Envoyer la Demande",
+    "errorMessage": "Veuillez remplir tous les champs",
+    "successfulMessage": "Message envoyé avec succès",
+    "failedMessage": "Échec de l'envoi du message. Veuillez réessayer."
   },
 
   "footerLinks": {

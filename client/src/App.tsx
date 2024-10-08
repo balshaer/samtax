@@ -1,11 +1,11 @@
 import "animate.css";
 import "../app/css/globals.css";
 import AppRoutes from "@/routes/__routes";
-import { Toaster } from "@/components/ui/sonner";
 import { inject } from "@vercel/analytics";
 import { useTranslation } from "react-i18next";
 import LoadingPage from "./pages/LoadingPage";
 import { useEffect, useState } from "react";
+import { Toaster } from "./components/ui/toaster";
 
 const App: React.FC = () => {
   inject();
@@ -18,9 +18,7 @@ const App: React.FC = () => {
 
   return (
     <div dir="ltr" className="App">
-      <Toaster className="hidden max-md:block" position="top-center" />
-      <Toaster className="hidden min-[768px]:block" />
-
+      <Toaster />
       {isloading && <LoadingPage />}
       <AppRoutes />
     </div>

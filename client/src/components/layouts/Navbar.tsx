@@ -13,7 +13,7 @@ import Logo from "@/components/ui/Logo";
 import { NavigationMenuDemo } from "./NavigationMenuDemo";
 import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
-import { toast } from "sonner";
+import { toast } from "@/hooks/use-toast";
 
 interface Language {
   code: string;
@@ -38,7 +38,10 @@ export default function Navbar() {
     document.documentElement.lang = lang.code;
     document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr";
     setSelectedLang(lang);
-    toast(t("navbar.languageToast"));
+    toast({
+      title: t("navbar.languageToast"),
+    });
+    setIsMenuOpen(false);
   };
 
   const languages: Language[] = [
@@ -144,7 +147,7 @@ export default function Navbar() {
             <li className="block py-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="m-auto flex w-[90%] items-center justify-between bg-white px-4 py-2 text-left text-[var(--hedline)]">
+                  <Button className="m-auto flex w-[95%] items-center justify-between rounded-sm border-[#00000053] bg-white px-4 py-2 text-left text-[var(--hedline)]">
                     <span>
                       {selectedLang.flag} {selectedLang.name}
                     </span>

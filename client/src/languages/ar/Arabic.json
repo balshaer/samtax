@@ -1,4 +1,7 @@
 {
+  "app": {
+    "loading": "جاري التحميل ..."
+  },
   "navbar": {
     "services": "خدماتنا",
     "contact": "اتصل بنا",
@@ -76,7 +79,10 @@
     "nameInput": "اسمك أو اسم شركتك",
     "emailInput": "البريد الإلكتروني@مثال.com",
     "messageInput": "رسالتك",
-    "send": "إرسال الاستفسار"
+    "send": "إرسال الاستفسار",
+    "errorMessage": "يرجى ملء جميع الحقول",
+    "successfulMessage": "تم إرسال الرسالة بنجاح",
+    "failedMessage": "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى."
   },
 
   "footerLinks": {
