@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Banner() {
   const { t } = useTranslation();
@@ -29,15 +29,29 @@ export default function Banner() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="flex w-full items-center justify-center gap-4 max-md:flex-col"
       >
-        <Link to={"#contact"} className="h-12 w-1/4 max-md:h-12 max-md:w-full">
-          <Button className="w-full h-full">{t("banner.getStarted")} </Button>
-        </Link>
+        <ScrollLink
+          to={"#contact"}
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="h-12 w-1/4 max-md:h-12 max-md:w-full"
+          activeClass="some-active-class"
+        >
+          <Button className="h-full w-full">{t("banner.getStarted")} </Button>
+        </ScrollLink>
 
-        <Link className="h-12 w-1/4 max-md:h-12 max-md:w-full" to={"#about"}>
-          <Button variant={"outline"} className="w-full h-full">
+        <ScrollLink
+          to={"#about"}
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="h-12 w-1/4 max-md:h-12 max-md:w-full"
+          activeClass="some-active-class"
+        >
+          <Button variant={"outline"} className="h-full w-full">
             {t("banner.aboutUs")}
           </Button>
-        </Link>
+        </ScrollLink>
       </motion.div>
     </section>
   );

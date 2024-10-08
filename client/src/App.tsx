@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import LoadingPage from "./pages/LoadingPage";
 import { useEffect, useState } from "react";
 import { Toaster } from "./components/ui/toaster";
+import { ScrollToTop } from "./components/ui/ScrollToTop";
 
 const App: React.FC = () => {
   inject();
@@ -18,6 +19,7 @@ const App: React.FC = () => {
 
   return (
     <div dir="ltr" className="App">
+      <ScrollToTop />
       <Toaster />
       {isloading && <LoadingPage />}
       <AppRoutes />

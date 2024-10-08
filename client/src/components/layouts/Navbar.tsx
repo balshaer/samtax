@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import {
@@ -14,6 +13,7 @@ import { NavigationMenuDemo } from "./NavigationMenuDemo";
 import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
 import { toast } from "@/hooks/use-toast";
+import { Link as ScrollLink } from "react-scroll";
 
 interface Language {
   code: string;
@@ -57,13 +57,17 @@ export default function Navbar() {
   }> = ({ to, onClick, children }) => {
     return (
       <motion.li whileTap={{ scale: 0.95 }} className="block py-2">
-        <Link
+        <ScrollLink
           to={to}
+          spy={true}
+          smooth={true}
+          duration={500}
           onClick={onClick}
           className="block px-4 py-2 text-[var(--paragraph)] transition-colors duration-200 hover:text-[var(--headline)]"
+          activeClass="some-active-class"
         >
           {children}
-        </Link>
+        </ScrollLink>
       </motion.li>
     );
   };
