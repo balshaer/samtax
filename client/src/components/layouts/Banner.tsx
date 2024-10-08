@@ -30,23 +30,21 @@ export default function Banner() {
         className="flex w-full items-center justify-center gap-4 max-md:flex-col"
       >
         <ScrollLink
-          to={"#contact"}
+          to={"contact"}
           spy={true}
           smooth={true}
           duration={500}
           className="h-12 w-1/4 max-md:h-12 max-md:w-full"
-          activeClass="some-active-class"
         >
           <Button className="h-full w-full">{t("banner.getStarted")} </Button>
         </ScrollLink>
 
         <ScrollLink
-          to={"#about"}
+          to={"about"}
           spy={true}
           smooth={true}
           duration={500}
           className="h-12 w-1/4 max-md:h-12 max-md:w-full"
-          activeClass="some-active-class"
         >
           <Button variant={"outline"} className="h-full w-full">
             {t("banner.aboutUs")}
