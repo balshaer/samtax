@@ -1,96 +1,106 @@
 {
   "navbar": {
-    "contact": "Contact",
-    "about": "À propos"
+    "services": "Nos Services",
+    "contact": "Contactez-nous",
+    "about": "À Propos de Notre Cabinet",
+    "bookabar": "Prendre Rendez-vous",
+    "language": "Français",
+    "languageToast": "Langue changée en français"
   },
 
   "banner": {
-    "title": "Services financiers et linguistiques professionnels",
-    "description": "Votre partenaire de confiance pour les services fiscaux, de traduction et d'immigration. Nous sommes spécialisés dans la préparation des déclarations fiscales, la tenue de livres et les services de traduction certifiés. Laissez-nous gérer vos besoins financiers et juridiques avec professionnalisme et soin.",
+    "title": "Services Financiers et Linguistiques Professionnels",
+    "description": "Votre Partenaire de Confiance pour les Services Fiscaux, de Traduction et d'Immigration. Nous sommes spécialisés dans la préparation des déclarations fiscales, la tenue de livres et les services de traduction certifiée. Laissez-nous gérer vos besoins financiers et juridiques avec professionnalisme et attention.",
     "getStarted": "Commencer",
-    "aboutUs": "À propos de nous"
+    "aboutUs": "À Propos de Notre Cabinet"
   },
 
   "services": {
-    "title": "Services",
+    "title": "Nos Services",
     "menuTitle": "Services",
     "subtitle": "Nous offrons une variété de services adaptés pour répondre à vos besoins financiers et juridiques",
 
     "tax_efiling": {
-      "title": "Services de déclaration fiscale électronique",
-      "description": "Simplifiez votre processus de déclaration fiscale avec notre service expert de préparation des déclarations pour les particuliers et les petites entreprises. Que vous ayez besoin d'aide pour les déclarations annuelles ou des situations fiscales plus complexes, nous vous couvrons."
+      "title": "Services de Déclaration Fiscale Électronique",
+      "description": "Préparation experte des déclarations fiscales pour particuliers et entreprises.",
+      "fullDescription": "Nos Services de Déclaration Fiscale Électronique offrent un soutien complet aux particuliers et aux petites et moyennes entreprises pour naviguer dans le paysage complexe des réglementations fiscales. Nous proposons des conseils d'experts pour préparer et soumettre des déclarations fiscales précises, en assurant la conformité avec les dernières lois fiscales et en maximisant les déductions potentielles. Nos professionnels fiscaux certifiés utilisent des systèmes de déclaration électronique de pointe pour traiter vos déclarations de manière sécurisée et efficace. Nous gérons un large éventail de situations fiscales, des déclarations individuelles simples aux scénarios plus complexes impliquant de multiples sources de revenus, des investissements et des structures d'entreprise. Notre service comprend des conseils de planification fiscale tout au long de l'année pour vous aider à prendre des décisions financières éclairées et à minimiser vos obligations fiscales."
     },
     "bookkeeping": {
-      "title": "Tenue de livres",
-      "description": "Nos services de tenue de livres sont conçus pour garder votre petite entreprise organisée. De la gestion des registres financiers au maintien de comptes prêts pour les impôts, nous assurons l'exactitude et la conformité tout au long de l'année."
+      "title": "Services de Comptabilité",
+      "description": "Tenue méticuleuse des registres financiers pour les petites entreprises.",
+      "fullDescription": "Nos Services de Comptabilité sont conçus pour fournir aux petites et moyennes entreprises un soutien solide en gestion financière. Nous utilisons des logiciels comptables de pointe et les meilleures pratiques de l'industrie pour maintenir des registres financiers précis et à jour. Nos services comprennent l'enregistrement quotidien des transactions, le rapprochement bancaire, la gestion des comptes créditeurs et débiteurs, et la génération d'états financiers. Nous veillons à ce que vos livres soient toujours prêts pour un audit et conformes aux normes comptables pertinentes. Nos comptables expérimentés travaillent en étroite collaboration avec vous pour comprendre les besoins de votre entreprise, en fournissant des aperçus de votre santé financière et en identifiant les domaines d'économies potentielles. Nous proposons également des rapports financiers personnalisés pour vous aider à prendre des décisions éclairées et à planifier stratégiquement la croissance de votre entreprise."
     },
     "translation": {
-      "title": "Services de traduction",
-      "description": "Nous fournissons des services de traduction professionnels en anglais, arabe et français. Que vous ayez besoin de traduction de documents pour un usage officiel ou une communication d'affaires, nous garantissons la précision et la pertinence culturelle."
+      "title": "Services de Traduction Professionnelle",
+      "description": "Traductions précises en anglais, arabe et français.",
+      "fullDescription": "Nos Services de Traduction Professionnelle offrent des solutions linguistiques de haute qualité pour une variété de besoins. Nous sommes spécialisés dans les traductions entre l'anglais, l'arabe et le français, répondant aux besoins des clients individuels et des entreprises. Notre équipe de traducteurs certifiés possède non seulement une expertise linguistique mais aussi des connaissances spécifiques à chaque domaine, assurant des traductions précises et contextuellement appropriées. Nous traitons une large gamme de types de documents, y compris les contrats juridiques, les rapports médicaux, les manuels techniques, les supports marketing et les documents académiques. Notre processus de traduction implique plusieurs étapes de contrôle qualité, y compris la relecture et l'édition, pour garantir les plus hauts standards de précision et de clarté. Nous proposons également des services de localisation pour s'assurer que votre contenu résonne avec la culture cible. Pour les projets urgents, nous fournissons des services de traduction express sans compromettre la qualité."
     },
     "immigration": {
-      "title": "Services d'immigration",
-      "description": "Naviguer dans le processus d'immigration peut être accablant. Nous vous assistons avec la documentation, la préparation des formulaires et les services notariaux pour simplifier votre parcours d'immigration."
+      "title": "Services d'Assistance à l'Immigration",
+      "description": "Soutien complet pour votre parcours d'immigration.",
+      "fullDescription": "Nos Services d'Assistance à l'Immigration fournissent un soutien complet aux personnes naviguant dans le processus complexe d'immigration. Nous offrons des conseils d'experts sur diverses voies d'immigration, y compris les visas de travail, le parrainage familial, les visas étudiants et les demandes de résidence permanente. Nos services comprennent une évaluation approfondie de l'éligibilité, une préparation et une révision méticuleuses de tous les documents requis, et une assistance pour remplir les formulaires afin d'assurer l'exactitude et l'exhaustivité. Nous restons au courant des dernières lois et réglementations en matière d'immigration pour vous fournir des conseils à jour. Notre équipe peut également vous aider à vous préparer aux entretiens d'immigration, à répondre aux demandes de preuves et à gérer les appels si nécessaire. Nous comprenons l'importance de votre parcours d'immigration et nous nous engageons à fournir un soutien personnalisé à chaque étape, de la consultation initiale à la résolution réussie de votre cas."
     },
     "notary": {
-      "title": "Services notariaux",
-      "description": "Besoin de notarisation pour des documents juridiques ? Nous offrons des services notariaux certifiés pour authentifier vos documents importants."
+      "title": "Services Notariaux",
+      "description": "Authentification officielle de documents importants.",
+      "fullDescription": "Nos Services Notariaux offrent une authentification officielle et légalement reconnue pour une large gamme de documents importants. En tant que notaires commissionnés, nous sommes autorisés à témoigner de la signature de documents importants et à faire prêter serment. Nos services comprennent la notarisation d'affidavits, d'actes immobiliers, de procurations, de testaments et de divers contrats juridiques. Nous veillons à ce que toutes les notarisations soient effectuées dans le strict respect des lois et réglementations de l'État, en maintenant les plus hauts standards d'intégrité et d'impartialité. Nos notaires sont bien versés dans les procédures appropriées pour identifier les signataires et détecter les fraudes ou coercitions potentielles. Nous proposons des options de planification flexibles, y compris des services de notaire mobile pour les clients ne pouvant pas se rendre à notre bureau. Notre objectif est de fournir des services de notarisation efficaces, fiables et professionnels pour garantir la légalité et l'authenticité de vos documents importants."
     }
   },
 
   "about": {
-    "title": "À propos de moi",
-    "description1": "Mahmoud Samaoui est un préparateur fiscal et traducteur certifié, servant les particuliers et les petites entreprises à Philadelphie. En tant que fier membre de l'Association américaine des traducteurs, Mahmoud offre des services de traduction experts en anglais, arabe et français.",
-    "description2": "Il s'engage à fournir un service personnalisé dans des domaines tels que la préparation fiscale, la tenue de livres et le soutien à l'immigration. Mahmoud s'efforce de simplifier les processus complexes et de fournir des solutions fiables adaptées aux besoins uniques de chaque client."
+    "title": "À Propos du Propriétaire",
+    "description1": "Mahmoud Samaoui est un préparateur fiscal certifié et traducteur professionnel, au service des particuliers et des petites entreprises à Philadelphie. En tant que membre estimé de l'Association Américaine des Traducteurs, Mahmoud offre des services de traduction experts en anglais, arabe et français.",
+    "description2": "Il s'engage à fournir un service personnalisé dans des domaines tels que la préparation fiscale, la comptabilité et le soutien à l'immigration. Mahmoud s'efforce de simplifier les processus complexes et de fournir des solutions fiables adaptées aux besoins uniques de chaque client."
   },
 
   "footer": {
-    "locationTitle": "Notre emplacement",
-    "services": "Services",
-    "company": "Entreprise",
-    "helpfulLinks": "Liens utiles",
-    "address": "1787 S 8th St (Coin de 8th St et Moore St) Philadelphie, PA 19148 USA",
+    "locationTitle": "Notre Emplacement",
+    "services": "Nos Services",
+    "company": "Notre Cabinet",
+    "helpfulLinks": "Liens Utiles",
+    "address": "1787 S 8th St (Intersection de la 8ème rue et de la rue Moore) Philadelphie, PA 19148 USA",
     "phone": "(267) 304-7121",
     "email": "msamaoui@outlook.com",
-    "contactMessage": "Pour un soutien fiscal, de traduction et juridique, n'hésitez pas à nous contacter aujourd'hui. Nous sommes là pour vous faciliter le processus !",
+    "contactMessage": "Pour un soutien fiscal, de traduction et juridique, n'hésitez pas à nous contacter. Nous sommes là pour faciliter vos démarches et répondre à vos besoins.",
     "legal": {
-      "terms": "Conditions d'utilisation",
-      "privacy": "Politique de confidentialité",
-      "cookies": "Politique des cookies"
+      "terms": "Conditions d'Utilisation",
+      "privacy": "Politique de Confidentialité",
+      "cookies": "Politique des Cookies"
     },
     "copyright": "© {{year}} Mahmoud Samaoui. Tous droits réservés."
   },
 
   "contact": {
     "title": "Contactez-nous",
-    "subtitle": "Prêt à élever votre stratégie financière ou besoin d'une traduction experte ? Connectons-nous !",
-    "nameInput": "votre nom",
-    "emailInput": "email@example.com",
-    "messageInput": "message",
-    "send": "Envoyer"
+    "subtitle": "Prêt à améliorer votre stratégie financière ou besoin d'une traduction experte ? Nous vous invitons à nous contacter.",
+    "nameInput": "Votre nom ou le nom de votre entreprise",
+    "emailInput": "email@exemple.com",
+    "messageInput": "Votre message",
+    "send": "Envoyer la Demande"
   },
+
   "footerLinks": {
     "services": {
-      "taxEFiling": "Services de déclaration fiscale en ligne",
-      "bookkeeping": "Comptabilité",
-      "translation": "Services de traduction",
-      "immigration": "Services d'immigration",
-      "notary": "Services de notaire"
+      "taxEFiling": "Services de Déclaration Fiscale Électronique",
+      "bookkeeping": "Services de Comptabilité",
+      "translation": "Services de Traduction Professionnelle",
+      "immigration": "Services d'Assistance à l'Immigration",
+      "notary": "Services Notariaux"
     },
     "company": {
-      "about": "À propos",
-      "meetTheTeam": "Rencontrez l'équipe",
+      "about": "À Propos de Notre Cabinet",
+      "meetTheTeam": "Rencontrez Notre Équipe",
       "contactUs": "Contactez-nous"
     },
     "helpfulLinks": {
-      "faqs": "FAQ",
+      "faqs": "Questions Fréquemment Posées",
       "resources": "Ressources",
-      "blog": "Blog"
+      "blog": "Notre Blog"
     },
     "legal": {
-      "termsConditions": "Conditions générales",
-      "privacyPolicy": "Politique de confidentialité",
-      "cookiePolicy": "Politique en matière de cookies"
+      "termsConditions": "Termes et Conditions",
+      "privacyPolicy": "Politique de Confidentialité",
+      "cookiePolicy": "Politique des Cookies"
     }
   }
 }

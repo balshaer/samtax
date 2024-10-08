@@ -84,7 +84,7 @@ export default function Contact() {
             name="message"
             placeholder={t("contact.messageInput")}
             value={message}
-            className={err && !message ? "border-red-500" : "h-36"}
+            className={err && !message ? "h-36 border-red-500" : "h-36"}
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>

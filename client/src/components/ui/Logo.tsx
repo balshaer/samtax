@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Logo() {
   return (
     <Link to={"/"}>
-      <div className="flex cursor-pointer items-center justify-start gap-2">
+      <div className="flex cursor-pointer select-none items-center justify-start gap-2">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

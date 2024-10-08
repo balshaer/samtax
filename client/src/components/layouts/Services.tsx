@@ -9,6 +9,14 @@ import {
 import { servicesData } from "@/data/ServicesData";
 import { useTranslation } from "react-i18next";
 import i18n from "@/i18n";
+import {
+  DialogDescription,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
 
 export default function Services() {
   const { t } = useTranslation();
@@ -24,7 +32,19 @@ export default function Services() {
       </p>
       <div className="grid w-full gap-8 md:grid-cols-2 lg:grid-cols-3">
         {servicesData.map((service, index) => (
-          <ServiceCard key={index} {...service} t={t} />
+          <Dialog>
+            <DialogTrigger>
+              <ServiceCard key={index} {...service} t={t} />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>{t(service.title)}</DialogTitle>
+                <DialogDescription >
+                  {t(service.fullDescription)}
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         ))}
       </div>
     </section>
@@ -48,6 +68,7 @@ function ServiceCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
+      className="h-full text-start"
     >
       <Card className="h-full transition-shadow hover:shadow-lg">
         <CardHeader>

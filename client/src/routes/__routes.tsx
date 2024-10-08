@@ -6,6 +6,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      {/* 404 page */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

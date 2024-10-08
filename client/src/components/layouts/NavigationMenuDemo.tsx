@@ -30,14 +30,14 @@ export function NavigationMenuDemo() {
               className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
             >
               {servicesData.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                  className="cursor-text"
-                >
-                  {component.description}
-                </ListItem>
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                    className="cursor-pointer"
+                  >
+                    {component.description}
+                  </ListItem>
               ))}
             </ul>
           </NavigationMenuContent>

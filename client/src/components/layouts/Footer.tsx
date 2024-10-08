@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { footerLinks } from "@/data/FooterLinks";
 import { useTranslation } from "react-i18next";
+import { iFrameLink } from "@/data/Links";
 
 const Logo = () => (
   <Link to="/">
@@ -35,8 +36,8 @@ const FooterLinkSection = ({
       <ul className="mt-6 space-y-4 text-sm">
         {links.map((link, index) => (
           <li key={index}>
-            <a
-              href={link.href}
+            <Link
+              to={link.href}
               className="flex items-center text-primary-foreground/65 transition hover:text-primary-foreground/75"
             >
               {t(link.name)}
@@ -46,7 +47,7 @@ const FooterLinkSection = ({
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
                 </span>
               )}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -58,7 +59,7 @@ const MapComponent = () => {
   return (
     <div className="flex h-[100%] w-full items-center justify-center border-2 border-[var(--horder-color)]">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8990928035283!2d-75.15990492346747!3d39.92557088817247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c8975d4b7c7d%3A0x4a0a3b8f0b8f0b8f!2s1787%20S%208th%20St%2C%20Philadelphia%2C%20PA%2019148!5e0!3m2!1sen!2sus!4v1625000000000!5m2!1sen!2sus"
+        src={iFrameLink}
         width="100%"
         height="100%"
         style={{ border: 0 }}
@@ -76,20 +77,20 @@ export default function Footer() {
 
   return (
     <footer className="bg-primary">
-      <div className="container">
+      <div className="container mx-auto px-4 py-12">
         <div className="lg:grid lg:grid-cols-2">
           <Card className="border-none bg-transparent lg:order-last">
-            <CardHeader>
-              <CardTitle className="text-primary-foreground">
+            <CardHeader className="px-0">
+              <CardTitle className="m-0 p-0 text-primary-foreground">
                 {t("footer.locationTitle")}
               </CardTitle>
             </CardHeader>
-            <CardContent className="h-64 lg:h-96">
+            <CardContent className="h-64 p-0 lg:h-96">
               <MapComponent />
             </CardContent>
           </Card>
 
-          <div className="w-full py-16 pe-16 max-md:p-8">
+          <div className="w-full py-16 pe-16 max-md:p-0">
             <div className="hidden text-primary-foreground lg:block">
               <Logo />
             </div>
@@ -99,14 +100,15 @@ export default function Footer() {
                 title={t("footer.services")}
                 links={footerLinks.services}
               />
+
               <FooterLinkSection
                 title={t("footer.company")}
                 links={footerLinks.company}
               />
-              <FooterLinkSection
+              {/* <FooterLinkSection
                 title={t("footer.helpfulLinks")}
                 links={footerLinks.helpfulLinks}
-              />
+              /> */}
             </div>
 
             <div className="mt-8 space-y-4 text-sm text-primary-foreground/80">
@@ -133,18 +135,18 @@ export default function Footer() {
             </p> */}
 
             <div className="mt-8 border-t border-primary-foreground/10 pt-8">
-              <ul className="flex flex-wrap gap-4 text-xs">
+              {/* <ul className="flex flex-wrap gap-4 text-xs">
                 {footerLinks.legal.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-primary-foreground/60 transition hover:text-primary-foreground/75"
                     >
                       {t(link.name)}
-                    </a>
+                    </Link>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
 
               <p className="mt-8 text-xs text-primary-foreground/60">
                 {t("footer.copyright", { year: new Date().getFullYear() })}

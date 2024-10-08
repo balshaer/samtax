@@ -1,15 +1,15 @@
 export const footerLinks = {
   services: [
-    { href: "#", name: "footerLinks.services.taxEFiling" },
-    { href: "#", name: "footerLinks.services.bookkeeping" },
-    { href: "#", name: "footerLinks.services.translation" },
-    { href: "#", name: "footerLinks.services.immigration" },
-    { href: "#", name: "footerLinks.services.notary" },
+    { href: "#services", name: "footerLinks.services.taxEFiling" },
+    { href: "#services", name: "footerLinks.services.bookkeeping" },
+    { href: "#services", name: "footerLinks.services.translation" },
+    { href: "#services", name: "footerLinks.services.immigration" },
+    { href: "#services", name: "footerLinks.services.notary" },
   ],
   company: [
-    { href: "#", name: "footerLinks.company.about" },
-    { href: "#", name: "footerLinks.company.meetTheTeam" },
-    { href: "#", name: "footerLinks.company.contactUs" },
+    { href: "#about", name: "footerLinks.company.about" },
+    // { href: "#", name: "footerLinks.company.meetTheTeam" },
+    { href: "#contact", name: "footerLinks.company.contactUs" },
   ],
   helpfulLinks: [
     { href: "#", name: "footerLinks.helpfulLinks.faqs" },
@@ -17,8 +17,8 @@ export const footerLinks = {
     { href: "#", name: "footerLinks.helpfulLinks.blog" },
   ],
   legal: [
-    { href: "#", name: "footerLinks.legal.termsConditions" },
-    { href: "#", name: "footerLinks.legal.privacyPolicy" },
-    { href: "#", name: "footerLinks.legal.cookiePolicy" },
+    { href: "/termsConditions", name: "footerLinks.legal.termsConditions" },
+    { href: "/privacyPolicy", name: "footerLinks.legal.privacyPolicy" },
+    { href: "/cookiePolicy", name: "footerLinks.legal.cookiePolicy" },
   ],
 };

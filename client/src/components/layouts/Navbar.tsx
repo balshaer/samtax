@@ -12,6 +12,8 @@ import {
 import Logo from "@/components/ui/Logo";
 import { NavigationMenuDemo } from "./NavigationMenuDemo";
 import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 interface Language {
   code: string;
@@ -21,9 +23,12 @@ interface Language {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { t } = useTranslation();
+
   const [selectedLang, setSelectedLang] = useState<Language>({
-    code: "en",
-    name: "English",
+    code: t("navbar.language"),
+    name: t("navbar.language"),
     flag: "",
   });
 
@@ -33,6 +38,7 @@ export default function Navbar() {
     document.documentElement.lang = lang.code;
     document.documentElement.dir = lang.code === "ar" ? "rtl" : "ltr";
     setSelectedLang(lang);
+    toast(t("navbar.languageToast"));
   };
 
   const languages: Language[] = [
@@ -122,16 +128,16 @@ export default function Navbar() {
         >
           <ul className="py-4">
             <MobileNavItem to="#services" onClick={() => setIsMenuOpen(false)}>
-              Our services
+              {t("navbar.services")}
             </MobileNavItem>
             <MobileNavItem to="#about" onClick={() => setIsMenuOpen(false)}>
-              About
+              {t("navbar.about")}
             </MobileNavItem>
             <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
-              Contact us
+              {t("navbar.contact")}
             </MobileNavItem>
             <MobileNavItem to="#book" onClick={() => setIsMenuOpen(false)}>
-              Book a bar
+              {t("navbar.bookabar")}
             </MobileNavItem>
 
             {/* Language Selector for Mobile */}
