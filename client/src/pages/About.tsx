@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 export default function About() {
   const { t } = useTranslation();
-
   const direction = i18n.language === "ar" ? "rtl" : "ltr";
 
   return (

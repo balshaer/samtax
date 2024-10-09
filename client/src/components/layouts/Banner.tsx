@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
-import { Link as ScrollLink } from "react-scroll";
 
 export default function Banner() {
   const { t } = useTranslation();
+
+  const styles = {
+    buttonDefault:
+      "h-12 w-1/4 max-md:h-12 max-md:w-full  gap-1 flex  capitalize font-bold items-center hover:shadow-xl justify-center rounded-full cursor-pointer px-6 py-3 transition duration-100 transform bg-[var(--button)] border-2 border-[var(--button-border)] text-[var(--button-text)] hoverd hover:bg-[var(--button-hover)] hover:text-[var(--button-text-hover)]",
+    buttonOutline:
+      "h-12 w-1/4 max-md:h-12 max-md:w-full gap-1 flex  capitalize font-bold items-center justify-center  bg-transparent rounded-full cursor-pointer px-6 py-3 transition duration-100 transform  border-2 border-[var(--button-border)] text-[var(--outline-button-text)] hoverd hover:bg-[var(--button-hover)] hover:text-[var(--button-text-hover)]",
+  };
+
   return (
     <section className="m-auto mb-16 max-w-4xl text-center">
       <motion.h2
@@ -29,27 +35,13 @@ export default function Banner() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="flex w-full items-center justify-center gap-4 max-md:flex-col"
       >
-        <ScrollLink
-          to={"contact"}
-          spy={true}
-          smooth={true}
-          duration={500}
-          className="h-12 w-1/4 max-md:h-12 max-md:w-full"
-        >
-          <Button className="h-full w-full">{t("banner.getStarted")} </Button>
-        </ScrollLink>
+        <a href={"#contact"} className={styles.buttonDefault}>
+          {t("banner.getStarted")}
+        </a>
 
-        <ScrollLink
-          to={"about"}
-          spy={true}
-          smooth={true}
-          duration={500}
-          className="h-12 w-1/4 max-md:h-12 max-md:w-full"
-        >
-          <Button variant={"outline"} className="h-full w-full">
-            {t("banner.aboutUs")}
-          </Button>
-        </ScrollLink>
+        <a href={"#about"} className={styles.buttonOutline}>
+          {t("banner.aboutUs")}
+        </a>
       </motion.div>
     </section>
   );

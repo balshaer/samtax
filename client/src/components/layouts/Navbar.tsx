@@ -13,7 +13,6 @@ import { NavigationMenuDemo } from "./NavigationMenuDemo";
 import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
 import { toast } from "@/hooks/use-toast";
-import { Link as ScrollLink } from "react-scroll";
 
 interface Language {
   code: string;
@@ -57,16 +56,13 @@ export default function Navbar() {
   }> = ({ to, onClick, children }) => {
     return (
       <motion.li whileTap={{ scale: 0.95 }} className="block py-2">
-        <ScrollLink
-          to={to}
-          spy={true}
-          smooth={true}
-          duration={500}
+        <a
+          href={to}
           onClick={onClick}
           className="block px-4 py-2 text-[var(--paragraph)] transition-colors duration-200 hover:text-[var(--headline)]"
         >
           {children}
-        </ScrollLink>
+        </a>
       </motion.li>
     );
   };
@@ -142,9 +138,9 @@ export default function Navbar() {
             <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
               {t("navbar.contact")}
             </MobileNavItem>
-            <MobileNavItem to="#book" onClick={() => setIsMenuOpen(false)}>
+            {/* <MobileNavItem to="book" onClick={() => setIsMenuOpen(false)}>
               {t("navbar.bookabar")}
-            </MobileNavItem>
+            </MobileNavItem> */}
 
             {/* Language Selector for Mobile */}
             <li className="block py-2">

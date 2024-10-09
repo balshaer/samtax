@@ -39,7 +39,7 @@ export default function Services() {
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>{t(service.title)}</DialogTitle>
-                <DialogDescription className="py-3">
+                <DialogDescription className="fullDescription py-3">
                   {t(service.fullDescription)}
                 </DialogDescription>
               </DialogHeader>

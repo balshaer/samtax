@@ -231,3 +231,18 @@
   }
 }
 
+.fullDescription {
+  line-height: 19px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--headline);
+  border-radius: 10px;
+  opacity: 70%;
+}

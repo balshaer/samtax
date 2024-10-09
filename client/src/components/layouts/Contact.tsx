@@ -13,7 +13,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

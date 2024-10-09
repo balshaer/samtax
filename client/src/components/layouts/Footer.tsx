@@ -39,8 +39,8 @@ const FooterLinkSection = ({
       <ul className="mt-6 space-y-4 text-sm">
         {links.map((link, index) => (
           <li key={index}>
-            <Link
-              to={link.href}
+            <a
+              href={link.href}
               className="flex items-center text-primary-foreground/65 transition hover:text-primary-foreground/75"
             >
               {t(link.name)}
@@ -50,7 +50,7 @@ const FooterLinkSection = ({
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
                 </span>
               )}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -111,7 +111,7 @@ export default function Footer() {
             </CardContent>
           </Card>
 
-          <div className="w-full py-16 pe-16 max-md:p-0">
+          <div className="w-full pe-16 max-md:p-0">
             <div className="hidden text-primary-foreground lg:block">
               <Logo />
             </div>
