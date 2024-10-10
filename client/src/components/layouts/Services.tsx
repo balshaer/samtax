@@ -39,7 +39,7 @@ export default function Services() {
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>{t(service.title)}</DialogTitle>
-                <DialogDescription className="fullDescription py-3">
+                <DialogDescription className="py-3 leading-6">
                   {t(service.fullDescription)}
                 </DialogDescription>
               </DialogHeader>
@@ -73,7 +73,8 @@ function ServiceCard({
       <Card className="h-full transition-shadow hover:shadow-lg">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Icon className="h-8 w-8 text-primary" /> <span>{t(title)}</span>{" "}
+            <Icon className="h-8 w-8 text-[var(--headline)]" />{" "}
+            <span>{t(title)}</span>{" "}
           </CardTitle>
         </CardHeader>
         <CardContent>

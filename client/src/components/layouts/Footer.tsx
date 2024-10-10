@@ -66,6 +66,10 @@ const MapComponent = () => {
     setLoading(false);
   };
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 5000);
+
   const direction = i18n.language === "ar" ? "rtl" : "ltr";
 
   return (
@@ -97,12 +101,12 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-primary">
+    <footer className="bg-[var(--footer-background)]">
       <div className="container mx-auto px-4 py-12">
         <div className="lg:grid lg:grid-cols-2">
           <Card className="border-none bg-transparent lg:order-last">
             <CardHeader className="px-0">
-              <CardTitle className="m-0 p-0 text-primary-foreground">
+              <CardTitle className="m-0 p-0 )]  text-primary-foreground">
                 {t("footer.locationTitle")}
               </CardTitle>
             </CardHeader>
@@ -133,7 +137,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 space-y-4 text-sm text-primary-foreground/80">
-              <p className="flex items-center gap-2">
+              <p className="flex max-w-md items-center gap-2">
                 <MapPin size={16} />
                 {t("footer.address")}
               </p>

@@ -5,7 +5,7 @@
   "navbar": {
     "services": "Nos Services",
     "contact": "Contactez-nous",
-    "about": "À Propos de Notre Cabinet",
+    "about": "À Propos",
     "bookabar": "Prendre Rendez-vous",
     "language": "Français",
     "languageToast": "Langue changée en français"
@@ -15,7 +15,7 @@
     "title": "Services Financiers et Linguistiques Professionnels",
     "description": "Votre Partenaire de Confiance pour les Services Fiscaux, de Traduction et d'Immigration. Nous sommes spécialisés dans la préparation des déclarations fiscales, la tenue de livres et les services de traduction certifiée. Laissez-nous gérer vos besoins financiers et juridiques avec professionnalisme et attention.",
     "getStarted": "Commencer",
-    "aboutUs": "À Propos de Notre Cabinet"
+    "aboutUs": "À Propos"
   },
 
   "services": {
@@ -94,7 +94,7 @@
       "notary": "Services Notariaux"
     },
     "company": {
-      "about": "À Propos de Notre Cabinet",
+      "about": "À Propos",
       "meetTheTeam": "Rencontrez Notre Équipe",
       "contactUs": "Contactez-nous"
     },

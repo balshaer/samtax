@@ -13,6 +13,7 @@ import { NavigationMenuDemo } from "./NavigationMenuDemo";
 import i18n from "@/i18n";
 import { useTranslation } from "react-i18next";
 import { toast } from "@/hooks/use-toast";
+import Mode from "./Mode";
 
 interface Language {
   code: string;
@@ -59,7 +60,7 @@ export default function Navbar() {
         <a
           href={to}
           onClick={onClick}
-          className="block px-4 py-2 text-[var(--paragraph)] transition-colors duration-200 hover:text-[var(--headline)]"
+          className="block px-4 py-2 transition-colors duration-200 hover:text-[var(--headline)]"
         >
           {children}
         </a>
@@ -70,10 +71,11 @@ export default function Navbar() {
   return (
     <nav
       dir="ltr"
-      className="sticky top-0 z-50 bg-white bg-opacity-70 shadow-sm backdrop-blur-md"
+      className="sticky top-0 z-50 bg-[var(--background)] shadow-sm"
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Logo />
+
         <div className="hidden md:block">
           <ul className="flex space-x-6">
             <NavigationMenuDemo />
@@ -81,11 +83,24 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center space-x-4">
+          {/* Display Mode component */}
+          <Mode />
+          {/* Mobile Menu Button */}
+          <div className="flex items-center space-x-2 py-3 md:hidden">
+            <div onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-[var(--headline)]" />
+              ) : (
+                <Menu className="h-6 w-6 text-[var(--headline)]" />
+              )}
+            </div>
+          </div>
+
           {/* Language Selector for Desktop */}
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button className="backdrop-blur-2 flex cursor-pointer items-center justify-center gap-1 rounded-full border-2 bg-[#0000000f] px-4 py-2 text-sm font-bold text-[var(--headline)] hover:border-[#0000006c] max-md:hidden">
-                <span>
+            <DropdownMenuTrigger className="m-0" asChild>
+              <Button className="m-0 flex cursor-pointer items-center justify-center gap-1 rounded-full border-2 bg-[#0000000f] px-4 py-2 text-sm font-bold text-[var(--headline)] hover:border-[#0000006c] max-md:hidden">
+                <span className="m-0">
                   {selectedLang.flag} {selectedLang.name}
                 </span>
                 <ChevronDown className="h-4 w-4 opacity-50" />
@@ -104,29 +119,15 @@ export default function Navbar() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
-          </div>
         </div>
       </div>
+
       {isMenuOpen && (
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="bg-white shadow-md md:hidden"
+          className="bg-[var(--card-background)] text-[var(--headline)] shadow-md md:hidden"
         >
           <ul className="py-4">
             <MobileNavItem to="#services" onClick={() => setIsMenuOpen(false)}>
@@ -138,15 +139,12 @@ export default function Navbar() {
             <MobileNavItem to="#contact" onClick={() => setIsMenuOpen(false)}>
               {t("navbar.contact")}
             </MobileNavItem>
-            {/* <MobileNavItem to="book" onClick={() => setIsMenuOpen(false)}>
-              {t("navbar.bookabar")}
-            </MobileNavItem> */}
 
             {/* Language Selector for Mobile */}
             <li className="block py-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="m-auto flex w-[95%] items-center justify-between rounded-sm border-[#00000053] bg-white px-4 py-2 text-left text-[var(--hedline)]">
+                  <Button className="m-auto flex w-[95%] items-center justify-between rounded-sm border-[#00000053] bg-[var(--background)] px-4 py-2 text-left text-[var(--hedline)]">
                     <span>
                       {selectedLang.flag} {selectedLang.name}
                     </span>

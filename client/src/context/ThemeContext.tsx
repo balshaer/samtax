@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+import DarkMode from "@/themes/Dark";
 import LightMode from "@/themes/Light";
 import React, {
   createContext,
@@ -36,7 +38,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <StyledThemeProvider theme={{ mode: theme }}>
-        {theme === "dark" ? <LightMode /> : <LightMode />}
+        {theme === "dark" ? <LightMode /> : <DarkMode />}
         {children}
       </StyledThemeProvider>
     </ThemeContext.Provider>
