@@ -29,7 +29,7 @@ const LightMode = createGlobalStyle`
     --footer-background : #16161a;
     --footer-text: #c1c2c2;
     --menu-color:#000;
-    --input-text: #000;
+    --input-text: #323449;
     --input-border:"#ef4565";
     --selectBox-border : #000;
     --outline-button-text :#000 ;
