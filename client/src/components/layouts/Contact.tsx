@@ -104,7 +104,11 @@ export default function Contact() {
             type="text"
             placeholder={t("contact.nameInput")}
             value={name}
-            className={err && !name ? "border-red-500" : ""}
+            className={
+              err && !name
+                ? "border-red-500 focus:border-2 focus:border-red-500"
+                : ""
+            }
             onChange={(e) => setName(e.target.value)}
           />
         </div>
@@ -119,7 +123,11 @@ export default function Contact() {
             type="email"
             placeholder={t("contact.emailInput")}
             value={email}
-            className={err && !email ? "border-red-500" : ""}
+            className={
+              err && !email
+                ? "border-red-500 focus:border-2 focus:border-red-500"
+                : ""
+            }
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -133,7 +141,11 @@ export default function Contact() {
             name="message"
             placeholder={t("contact.messageInput")}
             value={message}
-            className={err && !message ? "h-36 border-red-500" : "h-36"}
+            className={
+              err && !message
+                ? "h-36 border-red-500 focus:border-2 focus:border-red-500"
+                : "h-36"
+            }
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
