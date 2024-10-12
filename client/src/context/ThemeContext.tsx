@@ -33,6 +33,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("pageMode", theme);
+
+    if (theme === "dark") {
+      document.body.id = "dark";
+    } else if (theme === "light") {
+      document.body.id = "light";
+    }
   }, [theme]);
 
   return (

@@ -55,10 +55,10 @@ export default function Contact() {
 
     try {
       await emailjs.sendForm(
-        "service_vr92r5g",
-        "template_dvr1x78",
+        "service_yaymv75",
+        "template_3fuoy8m",
         form,
-        "5J3vip7CH5ZH9OLZv",
+        "uk5KAEW_CQLtVLpZY",
       );
 
       toast({

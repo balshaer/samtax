@@ -27,14 +27,14 @@ export function NavigationMenuDemo() {
           <NavigationMenuContent>
             <ul
               dir={direction}
-              className="grid w-[400px] gap-3 bg-[var(--background)] p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
+              className="grid w-[400px] gap-3 border-none bg-[var(--background)] p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"
             >
               {servicesData.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:bg-[var(--card-background)]"
                 >
                   {component.description}
                 </ListItem>
@@ -70,7 +70,7 @@ const ListItem = React.forwardRef<
 
   return (
     <li>
-      <NavigationMenuLink asChild>
+      <NavigationMenuLink className="hover:bg-[var(--card-background)]" asChild>
         <a
           ref={ref}
           className={cn(
